@@ -1,4 +1,5 @@
 import json
+import csv
 import os
 from bs4 import BeautifulSoup
 from collections import defaultdict
@@ -18,17 +19,20 @@ def process_file(file_path):
         text = soup.get_text()
         tokens = tokenizer.tokenize(text.lower())
         stemmed_tokens = [stemmer.stem(token) for token in tokens]
-        return stemmed_tokens
+        return stemmed_tokens, data['url']
 
 
-for root, dirs, files in os.walk('path_to_your_data'):
+for root, dirs, files in os.walk('ANALYST'):
     for file in files:
         if file.endswith('.json'):
             file_path = os.path.join(root, file)
-            tokens = process_file(file_path)
+            tokens, tokenurl = process_file(file_path)
             for token in tokens:
-                inverted_index[token].append(file_path) # You should include document ID and term frequency
-
+                # You should include document ID and term frequency
+                if tokenurl not in inverted_index[token]:
+                    inverted_index[token].append(tokenurl)
 
 with open('inverted_index.json', 'w') as index_file:
+    # sorteddata = {k: v for k, v in sorted(
+    #    inverted_index.items(), key=lambda inverted_index: inverted_index[1], reverse=True)}
     json.dump(inverted_index, index_file)
