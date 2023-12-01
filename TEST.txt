@@ -1,0 +1,21 @@
+Search Engine Test Queries
+--------------------------
+
+Below are the test queries used to evaluate the search engine. Comments include initial performance issues and improvements made.
+
+1. "machine learning"
+   - Initially, returned too many irrelevant results. Improved by refining the tf-idf scoring and ensuring proper tokenization.
+
+2. "data science"
+   - Faced issues with stemming causing mismatched results. Adjusted the stemmer settings to improve accuracy.
+
+3. "python programming"
+   - Early tests showed slow response times. Optimized the index reading process to enhance performance.
+
+4. "database systems"
+   - Initially had lower recall. Improved by adjusting the ranking algorithm to weigh certain terms more heavily.
+
+5. "artificial intelligence"
+   - Initially, relevant documents ranked lower. Improved by refining the scoring algorithm to better account for term importance.
+
+Each query helped identify and address different aspects of the search engine's performance, leading to overall improvements in accuracy and efficiency.
