@@ -20,35 +20,25 @@ id_file = open('id.csv', 'r')
 id_reader = csv.reader(id_file)
 id_dict = {row[0]: row[1] for row in id_reader}
 
-# TF-IDF score calculator
-# Basically multiplies term freq by inverse doc freq
-
 
 def tf_idf_score(query_tokens, document, inverted_index, total_docs, doc_freqs):
+    # TF-IDF score calculator
+    # Basically multiplies term freq by inverse doc freq
     score = 0
-    # Loop through each word in the query
     for token in query_tokens:
-        # Check if the token is in the inverted index
-        if token in inverted_index:
-            # Get the term frequency (tf) for the token in the document
-            tf = 1 if document in inverted_index[token] else 0
-
-            # Get the document frequency (df) for the token
-            df = doc_freqs.get(token, 0)
-
-            # Calculate the inverse document frequency (idf)
-            idf = math.log((total_docs / (1 + df)) + 1)  # Math stuff for idf
-
-            # Calculate the TF-IDF score for the token in the document and add it to the total score
-            score += (tf * idf)  # Add up scores
-
+        # term frequency for token in document
+        tf = 1 if document in inverted_index[token] else 0
+        # document frequency for token
+        df = doc_freqs.get(token, 0)
+        # calculate inverse document frequency (idf)
+        idf = math.log((total_docs / (1 + df)) + 1)  # Math stuff for idf
+        # Calculate the TF-IDF score for the token in the document and add it to the total score
+        score += (tf * idf)  # Add up scores
     return score
 
-# Main search func
 
-
-# Main search func
 def search_with_index(query, index_file='inverted_index.csv', id_file='id.csv'):
+    # Main Search Function
     query_tokens = set(stemmer.stem(token)
                        for token in tokenizer.tokenize(query.lower()))
 
@@ -85,7 +75,6 @@ def search_with_index(query, index_file='inverted_index.csv', id_file='id.csv'):
     ranked_documents = sorted(
         document_scores, key=document_scores.get, reverse=True)
     return ranked_documents[:5]  # Give back top 5
-# supercalifragilisticexpialidocious
 
 
 class SearchApp(QWidget):
