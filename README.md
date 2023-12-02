@@ -10,7 +10,7 @@ This guide explains how to run and use the Search Engine application developed f
 
    The indexer creates an inverted index from a set of documents. To run the indexer, execute:
 
-   python indexer.py
+   python indexer_csv.py
 
    This script reads the documents from a specified directory and generates an 'inverted_index.json' file. Make sure you have the required document files in the 'DEV' directory.
 
@@ -18,7 +18,7 @@ This guide explains how to run and use the Search Engine application developed f
 
    To start the search interface, run:
 
-   python search.py
+   python search_csv.py
 
    This will open a GUI where you can interact with the search engine.
 
