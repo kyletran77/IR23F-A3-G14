@@ -29,4 +29,41 @@ Below are the test queries used to evaluate the search engine. Comments include 
 
 9. "uci"
    - Handling of broad word that encompasses the whole list of links
+10. "algorithm efficiency"
+Initially, results were too general. Enhanced by implementing a more specific matching algorithm.
+
+11."network security"
+Early results skewed towards non-academic sources. Adjusted to prioritize educational and research materials.
+
+12."programming languages"
+
+Initial tests returned too many basic tutorials. Improved by tweaking the algorithm to favor more advanced and academic content.
+13."database management"
+
+Faced issues with broad results. Fine-tuned to focus on academic and technical resources.
+14."software engineering"
+
+Initial results mixed with general software development content. Improved by refining search term weighting.
+15."machine learning"
+
+Early results heavily skewed towards commercial applications. Adjusted to balance with academic research and educational material.
+16."data structures"
+
+Initially returned many irrelevant coding examples. Improved by refining the index to prioritize educational content.
+17."cloud computing"
+
+Results initially focused on commercial services. Tweaked to include more educational and technical resources.
+18."quantum computing"
+
+Faced issues with outdated resources. Enhanced to prioritize the most recent and relevant academic material.
+19."ethical hacking"
+
+Initial results were too broad and unrelated. Focused the search algorithm to target specific academic and professional content.
+20."virtual reality"
+
+Early results were skewed towards gaming. Adjusted to include more educational and research-oriented content.
+21."computer graphics"
+
+Initial searches returned too many basic tutorials. Improved by refining the search to prioritize advanced studies and research papers.
+
 Each query helped identify and address different aspects of the search engine's performance, leading to overall improvements in accuracy and efficiency.
