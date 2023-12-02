@@ -18,4 +18,15 @@ Below are the test queries used to evaluate the search engine. Comments include 
 5. "artificial intelligence"
    - Initially, relevant documents ranked lower. Improved by refining the scoring algorithm to better account for term importance.
 
+6. "the"
+   - Handling of unimportant/irrelevant searches
+
+7. "supercalifragilisticexpialidocious"
+   - Efficiency of really specific word that will only appear in wordlist.txt
+
+8. "awelkjfh aohiwg mnvcx"
+   - Gibberish words that wouldn't appear
+
+9. "uci"
+   - Handling of broad word that encompasses the whole list of links
 Each query helped identify and address different aspects of the search engine's performance, leading to overall improvements in accuracy and efficiency.
